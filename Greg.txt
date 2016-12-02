@@ -1,1 +1,30 @@
-Hello
+Install NodeJS
+==============
+sudo apt-get install nodejs
+sudo apt-get install build-essential
+sudo ln -s /usr/bin/nodejs /usr/bin/node (http://stackoverflow.com/questions/21491996/installing-bower-on-ubuntu)
+
+Install NPM
+===========
+sudo apt install npm
+
+Install Bower
+=============
+npm install -g bower
+bower update
+
+Install Gulp
+============
+sudo npm install --global gulp-cli
+
+Install Grunt
+=============
+sudo npm install -g grunt-cli
+
+Build the solution
+==================
+gulp
+gulp dev (Serve)
+
+
+
