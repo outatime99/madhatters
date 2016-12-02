@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+<title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+
+
+</head>
+
+<body>
+	<form id="form" role="form">
+		<div class="form-group">
+			<label>Name</label> <input id="name" name="name"
+				class="form-control" placeholder="Enter name" value="Greg">
+		</div>
+		<div class="form-group">
+			<label>Surname</label> <input id="surname" name="surname"
+				class="form-control" placeholder="Enter surname" value="Surname">
+		</div>
+		<button type="button" id="btnSubmit" class="btn btn-default">Submit</button>
+	</form>
+
+	<!-- jQuery -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+
+	<!-- Custom Javascript -->
+	<script>	
+		$.fn.formToJSON = function() {	
+			var formdata = "{";
+			formdata += "\"user_name\" : \"" + $("input[name=name]").val() + "\",";
+			formdata += "\"user_surname\" : \"" + $("input[name=surname]").val() + "\"";				
+			formdata = formdata + "}";
+			//alert('Greg JSON is:' + formdata);
+			return formdata;
+		};					
+		$(document).ready(function(){
+			$('#btnSubmit').click(function() 
+				{
+				var send = $('#form').formToJSON();
+				var send2 = JSON.stringify(send);
+				//var testdata = {}
+				alert('JSON (Ready) is:' + send);
+				$.ajax({
+					//url: 'http://localhost:8080/test/post',
+					url: 'http://localhost:8080/expd-jee-web/rest/users/create',
+					type: 'POST',
+					contentType: 'application/json; charset=utf-8',
+					crossDomain: true,
+					data: send,
+					dataType: 'json',
+				    success: function(data){
+					     //On ajax success do this
+					     alert(data);
+					},
+					error: function(xhr, ajaxOptions, thrownError) {
+						alert("Error Occurred " + "HTTP Response Code: " + xhr.status);
+						alert("Data: " + send2);
+
+					    }
+				});
+			});
+		});
+	</script>
+
+</body>
+
+</html>
