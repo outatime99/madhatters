@@ -17,8 +17,11 @@ public class MyRouteBuilder extends RouteBuilder {
     restConfiguration().component("jetty")
     	.bindingMode(RestBindingMode.json)
     	.dataFormatProperty("prettyPrint", "true")
+    	.enableCORS(true)
     	.port(8080);
     	
+    
+    
     rest("/dashboard")
         .get("/mytaskscount").consumes("application/json").to("direct:mytaskscount")
         .get("/alltaskscount").consumes("application/json").to("direct:alltaskscount")
@@ -26,6 +29,12 @@ public class MyRouteBuilder extends RouteBuilder {
         .get("/allideascount").consumes("application/json").to("direct:allideascount")
         .get("/newideascount").consumes("application/json").to("direct:newideascount")
         .post("/bye").to("mock:update");
+    
+    rest("/ideas")
+		.post("/create").consumes("application/json").to("direct:createidea");
+    
+    rest("/tasks")
+    	.get("/mytasklist/{id}").consumes("application/json").to("direct:mytasklist");
     
     rest("/test")
     	.get("/get").consumes("application/json").to("direct:testget")
@@ -51,12 +60,22 @@ public class MyRouteBuilder extends RouteBuilder {
 		.log("AllIdeasCount method invoked")
 		.transform().constant("3");
     
+    from("direct:mytasklist")
+		.log("MyTaskList method invoked")
+		.transform().constant("{DUMMY}");
+    
     from("direct:testget")
 		.log("TestGet method invoked")
 		.transform().constant("TestGet method invoked");
-    
+
     from("direct:testpost")
 		.log("TestPost method invoked")
+		.transform().constant("TestPost method invoked");
+    
+    
+    from("direct:createidea")
+		.log("CreateIdea method invoked")
+		.process(new ExchangeLogger())
 		.transform().constant("TestPost method invoked");
     
     from("direct:bye")

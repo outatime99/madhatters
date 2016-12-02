@@ -23,7 +23,8 @@ sudo npm install -g grunt-cli
 
 Build the solution
 ==================
-
+gulp
+gulp dev (Serve)
 
 
 
