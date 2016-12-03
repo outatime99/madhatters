@@ -2,7 +2,13 @@ package com.investec.expd.expd;
 
 import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.jpa.JpaComponent;
+import org.apache.camel.model.dataformat.JsonLibrary;
 import org.apache.camel.model.rest.RestBindingMode;
+
+import com.investec.expd.expd.processors.IdeaPersister;
+import com.investec.expd.expd.processors.InsertIntoDB;
+import com.investec.expd.expd.processors.SearchProcessor;
 
 /**
  * A Camel Java8 DSL Router
@@ -13,7 +19,8 @@ public class MyRouteBuilder extends RouteBuilder {
      * Let's configure the Camel routing rules using Java code...
      */
     public void configure() {
-
+	
+    	  	
     restConfiguration().component("jetty")
     	.bindingMode(RestBindingMode.json)
     	.dataFormatProperty("prettyPrint", "true")
@@ -31,7 +38,9 @@ public class MyRouteBuilder extends RouteBuilder {
         .post("/bye").to("mock:update");
     
     rest("/ideas")
-		.post("/create").consumes("application/json").to("direct:createidea");
+    	.get("/{id}").to("direct:getideadetail")
+		.post("/create").consumes("application/json").to("direct:createidea")
+    	.post("/search").consumes("application/json").to("direct:findideas");
     
     rest("/tasks")
     	.get("/mytasklist/{id}").consumes("application/json").to("direct:mytasklist");
@@ -72,11 +81,30 @@ public class MyRouteBuilder extends RouteBuilder {
 		.log("TestPost method invoked")
 		.transform().constant("TestPost method invoked");
     
+    from("direct:findideas")
+		.log("FindIdeas method invoked")
+		.process(new ExchangeLogger())
+		.process(new SearchProcessor())
+    	.marshal().json(JsonLibrary.Jackson)
+    	.process(new ExchangeLogger());
+		//.transform().constant("TestPost method invoked");
+    
+    from("direct:getideadetail")
+		.log("GetIdeaDetail method invoked")
+		.process(new ExchangeLogger())
+		.transform().constant("GetIdeaDetail method invoked");
     
     from("direct:createidea")
 		.log("CreateIdea method invoked")
 		.process(new ExchangeLogger())
-		.transform().constant("TestPost method invoked");
+		//.unmarshal().json()
+		.unmarshal().json(JsonLibrary.Jackson)
+		.process(new ExchangeLogger())
+		//.process(new IdeaPersister())
+		// DATABASE INSERT
+		//.process(new InsertIntoDB())
+		//.to("jdbc:ExperienceDiscoverer")
+		.transform().constant("Idea Created");
     
     from("direct:bye")
     	.log("Bye Method Invoked")

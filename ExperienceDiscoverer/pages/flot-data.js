@@ -1050,16 +1050,16 @@ $(function() {
     ];
 
     function euroFormatter(v, axis) {
-        return v.toFixed(axis.tickDecimals) + "€";
+        return v.toFixed(axis.tickDecimals) + "R";
     }
 
     function doPlot(position) {
         $.plot($("#flot-line-chart-multi"), [{
             data: oilprices,
-            label: "Oil price ($)"
+            label: "Realised ROI (R)"
         }, {
             data: exchangerates,
-            label: "USD/EUR exchange rate",
+            label: "USD/ZAR exchange rate",
             yaxis: 2
         }], {
             xaxes: [{

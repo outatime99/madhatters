@@ -2,31 +2,27 @@
 <html lang="en">
 
 <head>
-
-
 <title>Rest service testing page</title>
-
-
-
 </head>
-
 <body>
+	
 	<form id="form_createNewIdea" role="form">
 		<div class="form-group">
 			<label>Name</label> <input id="name" name="name"
 				class="form-control" placeholder="Enter name" value="Greg">
 		</div>
 		<div class="form-group">
-			<label>SurnameX</label> <input id="surname" name="surname"
+			<label>Surname</label> <input id="surname" name="surname"
 				class="form-control" placeholder="Enter surname" value="Surname">
 		</div>
-		<button type="button" id="btnSubmit" class="btn btn-default">Submit</button>
+		<button type="button" id="btn_createNewIdea" class="btn btn-default">Submit</button>
 	</form>
 
 	<!-- jQuery -->
 	<script src="../vendor/jquery/jquery.min.js"></script>
 
 	<!-- Custom Javascript -->
+	 
 	<script>	
 		$.fn.formToJSON = function() {	
 			var formdata = "{";
@@ -37,13 +33,13 @@
 			return formdata;
 		};					
 		$(document).ready(function(){
-			$('#btnSubmit').click(function() 
+			$('#btn_createNewIdea').click(function() 
 				{
 				var send = $('#form_createNewIdea').formToJSON();
 				var send2 = JSON.stringify(send);
 				alert('JSON (Ready) is:' + send);
 				$.ajax({
-					url: 'http://localhost:8080/test/post',
+					url: 'http://localhost:8080/ideas/create',
 					type: 'POST',
 					contentType: 'application/json; charset=utf-8',
 					crossDomain: true,
@@ -60,7 +56,5 @@
 			});
 		});
 	</script>
-
 </body>
-
 </html>

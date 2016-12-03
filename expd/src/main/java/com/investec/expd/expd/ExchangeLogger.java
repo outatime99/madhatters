@@ -24,7 +24,8 @@ public class ExchangeLogger implements Processor  {
 	public void process(Exchange exchange) throws Exception {
 
 		// if (debug == true) then do all this below
-		logExchange(exchange);
+		//logExchange(exchange);
+		basicLog(exchange);
 
 		Exception exception = (Exception) exchange.getProperty(Exchange.EXCEPTION_CAUGHT);
 		if (exception != null)
@@ -32,25 +33,25 @@ public class ExchangeLogger implements Processor  {
 	}
 	
 	private void basicLog(Exchange exchange) throws Exception {
-		Map<String, ?> headers = exchange.getIn().getHeaders();
+		//Map<String, ?> headers = exchange.getIn().getHeaders();
 		Object body = exchange.getIn().getBody(Object.class);
-		Map<String, ?> props = exchange.getProperties();
-		CamelContext camelContext = exchange.getContext();
-		Collection<String> att = exchange.getIn().getAttachmentNames();
+		//Map<String, ?> props = exchange.getProperties();
+		//CamelContext camelContext = exchange.getContext();
+		//Collection<String> att = exchange.getIn().getAttachmentNames();
 		
 		String logMsg = "" + "\n";
-		logMsg += "=============H=E=A=D=E=R=S ======================" + "\n";
-		logMsg += mapStringBuilder(headers, "header");
-		logMsg += "=============P=R=O=P=S==========================" + "\n";
-		logMsg += mapStringBuilder(props, "prop");
+		//logMsg += "=============H=E=A=D=E=R=S ======================" + "\n";
+		//logMsg += mapStringBuilder(headers, "header");
+		//logMsg += "=============P=R=O=P=S==========================" + "\n";
+		//logMsg += mapStringBuilder(props, "prop");
 		logMsg += "=============B=O=D=Y============================" + "\n";
 		logMsg += body.toString() + "\n";
-		logMsg += "=============C=O=N=T=E=X=T======================" + "\n";
-		logMsg += camelContext.toString() + "\n";
-		logMsg += "=============A=T=T=A=C=H=M=E=N=T=S==============" + "\n";
-		logMsg += collectionStringBuilder(att, "attachments");
-		logMsg += "================================================" + "\n";
-		logger.info(logMsg);
+		//logMsg += "=============C=O=N=T=E=X=T======================" + "\n";
+		//logMsg += camelContext.toString() + "\n";
+		//logMsg += "=============A=T=T=A=C=H=M=E=N=T=S==============" + "\n";
+		//logMsg += collectionStringBuilder(att, "attachments");
+		//logMsg += "================================================" + "\n";
+		System.out.println(logMsg);
 	}
 	
 	private void logExchange(Exchange exchange) throws Exception {
