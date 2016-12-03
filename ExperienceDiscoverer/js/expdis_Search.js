@@ -17,7 +17,7 @@
 				    	//console.log(JSON.stringify(data.topics));
 				    	$.each(data.hits.hits, function(idx, hit){
 				    		//alert("Data: " + hit._source.idea_name);
-				    		$('#resultsTable tr:last').after('<tr><td>'+hit._source.idea_business_unit+'</td><td><a href="idea.html">'+hit._source.idea_name+'</a></td><td>'+hit._source.idea_description+'</td><td>'+hit._source.idea_roi+'</td><td>'+hit._source.idea_duedate+'</td></tr>');
+				    		$('#resultsTable tr:last').after('<tr><td>'+hit._source.idea_business_unit+'</td><td><a href="idea.html?id='+hit._id+'">'+hit._source.idea_name+'</a></td><td>'+hit._source.idea_description+'</td><td>'+hit._source.idea_roi+'</td><td>'+hit._source.idea_duedate+'</td></tr>');
 				    		//$("#nav").html('<a href="' + topic.link_src + '">' + topic.link_text + "</a>");
 				    	});
 					},
