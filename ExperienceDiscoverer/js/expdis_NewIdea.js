@@ -21,7 +21,7 @@
 				{
 				var send = $('#form_createNewIdea').formToJSON();
 				var send2 = JSON.stringify(send);
-				//alert('JSON (Ready) is:' + send);
+				alert('JSON (Ready) is:' + send);
 				$.ajax({
 					//url: 'http://localhost:8080/ideas/create',
 					url: 'http://localhost:9200/expdis_ideas/idea',
