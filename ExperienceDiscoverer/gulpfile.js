@@ -97,6 +97,7 @@ gulp.task('copy', function() {
 
     gulp.src(['bower_components/raphael/raphael.js', 'bower_components/raphael/raphael.min.js'])
         .pipe(gulp.dest('vendor/raphael'))
+        
 
 })
 

@@ -212,27 +212,28 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form">
+                                    <form id="form_createNewIdea" name="form_createNewIdea" role="form">
                                         <div class="form-group">
                                             <label>Idea</label>
-                                            <input class="form-control">
+                                            <input id="idea_name" name="idea_name" class="form-control" value="Test Idea">
                                             <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 
 										<div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="4" placeholder="Enter text"></textarea>
+                                            <textarea id="idea_description" name="idea_description" class="form-control" rows="4" placeholder="Enter text" >Test Description</textarea>
                                         </div>
 <div class="row">
                                 <div class="col-lg-6">
 										 <div class="form-group">
                                             <label>ROI</label>
-                                            <input class="form-control">
+                                            <input id="idea_roi" name="idea_roi" class="form-control" value="200000.00">
                                             <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
+                                        
 										 <div class="form-group">
                                             <label>Business Unit</label>
-											<select class="form-control">
+											<select id="idea_bu" name="idea_bu" class="form-control">
                                                 <option>ICIB</option>
                                                 <option>Property</option>
                                                 <option>Investment</option>
@@ -248,7 +249,7 @@
  <label>Due date</label>
 										<div class="input-group date" data-provide="datepicker">
 										
-    <input type="text" class="form-control">
+    <input id="idea_duedate" name="idea_duedate" type="text" value="2017-03-31" class="form-control">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
@@ -258,7 +259,7 @@
 <br>
                                         <div class="form-group">
                                             <label>Supporting Document</label>
-                                            <input type="file" >
+                                            <input id="idea_file" name="idea_file" type="file" >
 											<!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 										
@@ -267,7 +268,7 @@
 </div>
  <div class="form-group">
                                             <label>Skills</label>
-                                            <select class="form-control">
+                                            <select id="idea_skills" name="idea_skills" class="form-control">
                                                 <option>C++</option>
                                                 <option>.Net</option>
                                                 <option>Excel</option>
@@ -277,7 +278,7 @@
 											</div>
 					
                                         						 
-                                        <button type="submit" class="btn btn-default">Submit Idea</button>
+                                        <button type="submit" id="btn_createNewIdea" class="btn btn-default">Submit Idea</button>
                                        
                                     </form>
                                 </div>
@@ -310,6 +311,47 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/expdis_NewIdea.js"></script>
+    <!-- <script>
+	$.fn.formToJSON = function() {	
+		var formdata = "{";
+		formdata += "\"idea_name\" : \"" + $("input[name=idea_name]").val() + "\",";
+		formdata += "\"idea_description\" : \"" + $("textarea[name=idea_description]").val() + "\",";
+		formdata += "\"idea_roi\" : \"" + $("input[name=idea_roi]").val() + "\",";
+		formdata += "\"idea_bu\" : \"" + $("input[name=idea_bu]").val() + "\",";
+		formdata += "\"idea_duedate\" : \"" + $("input[name=idea_duedate]").val() + "\",";
+		formdata += "\"idea_file\" : \"" + $("input[name=idea_file]").val() + "\",";
+		formdata += "\"idea_skills\" : \"" + $("input[name=idea_skills]").val() + "\"";			
+		formdata = formdata + "}";
+		//alert('Greg JSON is:' + formdata);
+		return formdata;
+	};					
+	$(document).ready(function(){
+		$('#btn_createNewIdea').click(function() 
+			{
+			var send = $('#form_createNewIdea').formToJSON();
+			var send2 = JSON.stringify(send);
+			alert('JSON (Ready) is:' + send);
+			$.ajax({
+				url: 'http://localhost:8080/ideas/create',
+				type: 'POST',
+				contentType: 'application/json; charset=utf-8',
+				crossDomain: true,
+				data: send,
+				dataType: 'json',
+			    success: function(data){
+				     alert("Success. Response is: " + data);
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					alert("Error Occurred " + "HTTP Response Code: " + xhr.status);
+					alert("Data: " + send2);
+				    }
+			});
+		});
+	});
+    </script>-->
 
 </body>
 

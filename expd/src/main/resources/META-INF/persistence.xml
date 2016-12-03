@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+<persistence-unit name="primary" transaction-type="RESOURCE_LOCAL">
+	<properties>
+    	<!-- JDBC Connection -->
+    	<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      	<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/investec"/>
+      	<property name="javax.persistence.jdbc.user" value="investec"/>
+      	<property name="javax.persistence.jdbc.password" value="password"/>
+      
+      	<!-- Hibernate Config -->
+      	<property name="hibernate.show_sql" value="true" />
+    	<property name="hibernate.format_sql" value="true" />
+ 		<property name="hibernate.transaction.flush_before_completion" value="true"/>
+    	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+    	<!-- <property name="hibernate.hbm2ddl.auto" value="validate" /> -->
+
+    	<!-- Connection Pooling -->
+    	<property name="hibernate.c3p0.min_size" value="5" />
+    	<property name="hibernate.c3p0.max_size" value="20" />
+    	<property name="hibernate.c3p0.timeout" value="500" />
+    	<property name="hibernate.c3p0.max_statements" value="50" />
+    	<property name="hibernate.c3p0.idle_test_period" value="2000" />
+
+    </properties>
+  </persistence-unit>
+</persistence>
