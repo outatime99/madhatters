@@ -53,17 +53,17 @@ $(document).ready(function() {
 $(function() {
 
     var data = [{
-        label: "Series 0",
-        data: 1
+        label: "Private",
+        data: 5
     }, {
-        label: "Series 1",
-        data: 3
+        label: "ICIB",
+        data: 7
     }, {
-        label: "Series 2",
-        data: 9
+        label: "Marketing",
+        data: 10
     }, {
-        label: "Series 3",
-        data: 20
+        label: "Wealth",
+        data: 13
     }];
 
     var plotObj = $.plot($("#flot-pie-chart"), data, {
@@ -1229,12 +1229,12 @@ $(function() {
     var barData = {
         label: "bar",
         data: [
-            [1354521600000, 1000],
-            [1355040000000, 2000],
-            [1355223600000, 3000],
-            [1355306400000, 4000],
-            [1355487300000, 5000],
-            [1355571900000, 6000]
+            [1354521600000, 10],
+            [1355040000000, 20],
+            [1355223600000, 30],
+            [1355306400000, 40],
+            [1355487300000, 50],
+            [1355571900000, 60]
         ]
     };
     $.plot($("#flot-bar-chart"), [barData], barOptions);

@@ -16,6 +16,7 @@
 
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<link href="../vendor/nav.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -48,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Experience Discoverer</a>
+               <img src="../images/images.png" alt="Icon">
             </div>
             <!-- /.navbar-header -->
 
@@ -156,17 +157,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                        
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -183,7 +174,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="flot.html"><i class="fa fa-table fa-fw"></i> Report</a>
+                            <a href="report.html"><i class="fa fa-table fa-fw"></i> Report</a>
                         </li>
                         <li>
                             <a href="admin.html"><i class="fa fa-edit fa-fw"></i> Admin</a>
@@ -195,68 +186,68 @@
             <!-- /.navbar-static-side -->
         </nav>
         <!-- Page Content -->
-       <div id="page-wrapper">
-            <div class="row">
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Reports</h1>
+                    <h1 class="page-header">Lets see how Investec is doing...</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Tasks Per Business Unit
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-pie-chart"></div>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                    	<div class="panel panel-default">
+	                        <div class="panel-heading">
+	                            Return on Investment Realisation
+	                        </div>
+	                        <!-- /.panel-heading -->
+	                        <div class="panel-body">
+								<canvas id="lineChart2"></canvas>
+	                        </div>
+                        	<!-- /.panel-body -->
+                    	</div>
+                    	<!-- /.panel -->
+                	</div>
+                    <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Most Popular Skills
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-bar-chart"></div>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-6">
+                    	<div class="panel panel-default">
+	                        <div class="panel-heading">
+	                            Initiatives per Business Unit
+	                        </div>
+	                        <!-- /.panel-heading -->
+	                        <div class="panel-body">
+								<canvas id="pieChart1"></canvas>
+	                        </div>
+                        	<!-- /.panel-body -->
+                    	</div>
+                    	<!-- /.panel -->
+                	</div>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                    	<div class="panel panel-default">
+	                        <div class="panel-heading">
+	                            Most Popular Skills
+	                        </div>
+	                        <!-- /.panel-heading -->
+	                        <div class="panel-body">
+								<canvas id="pieChart2"></canvas>
+	                        </div>
+                        	<!-- /.panel-body -->
+                    	</div>
+                    	<!-- /.panel -->
+                	</div>
+                    <!-- /.col-lg-6 -->                    
                 </div>
-                <!-- /.col-lg-12 -->
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Business Unit Performance
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-</div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
 
@@ -271,6 +262,75 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+	<script src="../js/Chart.bundle.min.js"></script>
+    
+    <script>
+    //Line Chart
+    var ctx2 = document.getElementById('lineChart2').getContext('2d');
+    var myChart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'projected',
+          data: [20000, 50000, 80000, 120000, 130000, 180000, 190000],
+          backgroundColor: "rgba(153,255,51,0.4)"
+        }, {
+          label: 'initiated',
+          data: [10000, 40000, 60000, 100000, 110000, 150000, 160000],
+          backgroundColor: "rgba(255,153,0,0.4)"
+        }, {
+            label: 'realised',
+            data: [10000, 30000, 50000, 60000, 80000, 110000, 120000],
+            backgroundColor: "rgba(255,153,0,0.4)"
+          }]
+      }
+    });
+    </script>
+    
+    <script>
+    // Pie Chart
+    
+    var ctx = document.getElementById('pieChart1').getContext('2d');
+    var myChart = new Chart(ctx, {
+    	  type: 'polarArea',
+    	  data: {
+    	    labels: ["ICIB", "Weath and Investments", "Property", "Private Bank","Import Solutions"],
+    	    datasets: [{
+    	      backgroundColor: [
+    	        "#2ecc71",
+    	        "#3498db",
+    	        "#95a5a6",
+    	        "#9b59b6",
+    	        "#f1c40f"
+    	      ],
+    	      data: [12, 19, 3, 17, 28]
+    	    }]
+    	  }
+    	});
+    </script>
+    
+    <script>
+    var ctx3 = document.getElementById("pieChart2").getContext('2d');
+    var myChart3 = new Chart(ctx3, {
+      type: 'pie',
+      data: {
+        labels: ["Excel Master", "Big Data", "Risk Valuation", "C++", "Negotiation", "Contracts", "Proof Of Concept"],
+        datasets: [{
+          backgroundColor: [
+            "#2ecc71",
+            "#3498db",
+            "#95a5a6",
+            "#9b59b6",
+            "#f1c40f",
+            "#e74c3c",
+            "#34495e"
+          ],
+          data: [12, 19, 3, 17, 28, 24, 7]
+        }]
+      }
+    });
+    </script>
 
 </body>
 

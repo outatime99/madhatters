@@ -14,8 +14,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
+   <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<link href="../vendor/nav.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -48,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Experience Discoverer</a>
+               <img src="../images/images.png" alt="Icon">
             </div>
             <!-- /.navbar-header -->
 
@@ -156,17 +157,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                       
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -183,7 +174,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="flot.html"><i class="fa fa-table fa-fw"></i> Report</a>
+                            <a href="report.html"><i class="fa fa-table fa-fw"></i> Report</a>
                         </li>
                         <li>
                             <a href="admin.html"><i class="fa fa-edit fa-fw"></i> Admin</a>
@@ -198,48 +189,45 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Idea</h1>
+                    <h1 class="page-header">Create a New Idea</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Form Elements
-                        </div>
+                    
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form">
+                                    <form role="form" id="form_createNewIdea" name="form_createNewIdea">
                                         <div class="form-group">
                                             <label>Idea</label>
-                                            <input class="form-control">
+                                            <input id="idea_name" name="idea_name" class="form-control">
                                             <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 
 										<div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="4" placeholder="Enter text"></textarea>
+                                            <textarea  id="idea_description" name="idea_description" class="form-control" rows="4" placeholder="Enter text"></textarea>
                                         </div>
 <div class="row">
                                 <div class="col-lg-6">
 										 <div class="form-group">
                                             <label>ROI</label>
-                                            <input class="form-control">
+                                            <input id="idea_roi" name="idea_roi" class="form-control">
                                             <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 										 <div class="form-group">
                                             <label>Business Unit</label>
-											<select class="form-control">
+											<select id="idea_bu" name="idea_bu" class="form-control">
                                                 <option>ICIB</option>
                                                 <option>Property</option>
                                                 <option>Investment</option>
                                                 <option>Wealth</option>
                                                 <option>Imports</option>
                                             </select>
-                                            <!--input class="form-control"-->
+											<!--input class="form-control"-->
                                             <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 										</div>
@@ -248,7 +236,7 @@
  <label>Due date</label>
 										<div class="input-group date" data-provide="datepicker">
 										
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" id="idea_duedate" name="idea_duedate">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
@@ -257,17 +245,8 @@
 <!--p class="help-block">Example block-level help text here.</p-->
 <br>
                                         <div class="form-group">
-                                            <label>Supporting Document</label>
-                                            <input type="file" >
-											<!--p class="help-block">Example block-level help text here.</p-->
-                                        </div>
-										
-                                       
-</div>
-</div>
- <div class="form-group">
                                             <label>Skills</label>
-                                            <select class="form-control">
+                                            <select class="form-control" id="idea_skills" name="idea_skills">
                                                 <option>C++</option>
                                                 <option>.Net</option>
                                                 <option>Excel</option>
@@ -275,19 +254,34 @@
                                                 <option>XML</option>
                                             </select>
 											</div>
-					
-                                        						 
-                                        <button type="submit" class="btn btn-default">Submit Idea</button>
+											
+											
+											<!--p class="help-block">Example block-level help text here.</p-->
+                                        </div>
+										
                                        
+</div>
+</div>
+ <div class="col-lg-6">
+ <div class="form-group">
+                                           
+											
+											<label>Supporting Document</label>
+                                            <input type="file" id="idea_file" class="idea_file" >
+					
+                                        		 </div>		
+ <div class="form-group">												 
+                                        <button type="submit" id="btn_createNewIdea"  name="btn_createNewIdea" class="btn btn-primary">Submit Idea</button>
+                                       </div>
                                     </form>
-                                </div>
+                               
                                 <!-- /.col-lg-6 (nested) -->
                                
                             </div>
                             <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
-                    </div>
+                    
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->

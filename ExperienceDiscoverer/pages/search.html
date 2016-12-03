@@ -16,6 +16,7 @@
 
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<link href="../vendor/nav.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -48,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Experience Discoverer</a>
+               <img src="../images/images.png" alt="Icon">
             </div>
             <!-- /.navbar-header -->
 
@@ -156,17 +157,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                       
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -183,7 +174,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="flot.html"><i class="fa fa-table fa-fw"></i> Report</a>
+                            <a href="report.html"><i class="fa fa-table fa-fw"></i> Report</a>
                         </li>
                         <li>
                             <a href="admin.html"><i class="fa fa-edit fa-fw"></i> Admin</a>
@@ -199,27 +190,28 @@
             <div class="row">
 			
                 <div class="col-lg-12">
-                    <h1 class="page-header">Idea</h1>
+                    <h1 class="page-header">Search for an Idea</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
 			
+
                 <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Form Elements
-                        </div>
-						
-                        <div class="panel-body">
-						
-						 <div class="col-lg-12"><br>
-						 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Kitchen Sink
-                        </div>
+                    
+
+			<div class="input-group custom-search-form">
+                                <input type="text" id="search_text" name="search_text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" name="btn_search" id="btn_search" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+			
+			
+                    
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -235,27 +227,27 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> Larry</td>
-                                            <td><a href="idea.html">Idea</a></td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-											<td>Otto</td>
+                                            <td> Import Solutions</td>
+                                            <td><a href="idea.html">Go Paperless</a></td>
+                                            <td>We project that we can save on printing costs and give customers a rich experience</td>
+                                            <td>R 5 000 000</td>
+											<td>12/05/17</td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Larry</td>
-                                            <td><a href="idea.html">Idea</a></td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-											<td>Thornton</td>
+                                            <td>Property</td>
+                                            <td><a href="idea.html">Mobile Application</a></td>
+                                            <td>Allow users to manage their profile on a mobile device</td>
+                                            <td>R 15 000 000</td>
+											<td>30/09/17</td>
                                            
                                         </tr>
                                         <tr>
-                                            <td> Larry</td>
-                                            <td><a href="idea.html">Idea</a></td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-											 <td>the Bird</td>
+                                            <td> Wealth</td>
+                                            <td><a href="idea.html">Consolidate Reporting</a></td>
+                                            <td>Build data center where all data is housed centrally</td>
+                                            <td>R 250 878</td>
+											 <td>11/06/17</td>
                                             
                                         </tr>
                                     </tbody>
@@ -264,12 +256,12 @@
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
-                    </div>
+                    
                            
                                         						 
                                         
                                     </form>
-                                </div>
+                                
                                 <!-- /.col-lg-6 (nested) -->
                                
                             </div>

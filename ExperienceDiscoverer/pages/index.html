@@ -16,6 +16,7 @@
 
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<link href="../vendor/nav.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -42,13 +43,15 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
+			
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Experience Discoverer</a>
+				
+                 <img src="../images/images.png" alt="Icon">
             </div>
             <!-- /.navbar-header -->
 
@@ -156,17 +159,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                        
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -183,7 +176,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="flot.html"><i class="fa fa-table fa-fw"></i> Report</a>
+                            <a href="report.html"><i class="fa fa-table fa-fw"></i> Report</a>
                         </li>
                         <li>
                             <a href="admin.html"><i class="fa fa-edit fa-fw"></i> Admin</a>
@@ -204,7 +197,7 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -212,7 +205,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
+                                    <div id="db_matchedIdeas" name="db_matchedIdeas" class="huge">26</div>
                                     <div>New Ideas that match your skills</div>
                                 </div>
                             </div>
@@ -226,7 +219,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -234,7 +227,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div id="db_myTasks" name="db_myTasks" class="huge">12</div>
                                     <div>Tasks currently assigned to you</div>
                                 </div>
                             </div>
@@ -248,7 +241,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">
@@ -256,7 +249,7 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
+                                    <div id="db_allIdeas" name="db_allIdeas" class="huge">124</div>
                                     <div>New Ideas within the Business</div>
                                 </div>
                             </div>
@@ -270,8 +263,57 @@
                         </a>
                     </div>
                 </div>
-                <!-- belinda Place notifications here please-->
-				<div class="col-lg-6">
+<div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+						<i class="fa fa-trophy"></i>
+                            My Contributions
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            
+							<div id="morris-bar-chart" style="position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg height="347" version="1.1" width="408.65625" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.65625px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+							<text x="32.515625" y="313.5" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">R0</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.015625,313.5H383.65625" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+							<text x="32.515625" y="241.375" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">R25k</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.015625,241.375H383.65625" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+							<text x="32.515625" y="169.25" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">R50k</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.015625,169.25H383.65625" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+							<text x="32.515625" y="97.12500000000003" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.250000000000028" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">R75k</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.015625,97.12500000000003H383.65625" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+							<text x="32.515625" y="25" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">R100k</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.015625,25H383.65625" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+							<text x="359.46763392857144" y="326" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6.75)"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">ICIB</tspan></text>
+							<text x="262.7131696428571" y="326" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6.75)"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Property</tspan></text>
+							<text x="165.95870535714286" y="326" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6.75)"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Investment</tspan></text>
+							<text x="69.20424107142857" y="326" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6.75)"><tspan dy="4.25" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Wealth</tspan></text><rect x="51.06277901785714" y="25" width="16.64146205357143" height="288.5" rx="0" ry="0" fill="#0b62a4" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="70.70424107142857" y="53.85000000000002" width="16.64146205357143" height="259.65" rx="0" ry="0" fill="#7a92a3" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="99.44001116071428" y="97.12500000000003" width="16.64146205357143" height="216.37499999999997" rx="0" ry="0" fill="#0b62a4" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="119.08147321428571" y="125.97500000000002" width="16.64146205357143" height="187.52499999999998" rx="0" ry="0" fill="#7a92a3" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="147.81724330357142" y="169.25" width="16.64146205357143" height="144.25" rx="0" ry="0" fill="#0b62a4" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="167.45870535714283" y="198.10000000000002" width="16.64146205357143" height="115.39999999999998" rx="0" ry="0" fill="#7a92a3" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="196.19447544642858" y="97.12500000000003" width="16.64146205357143" height="216.37499999999997" rx="0" ry="0" fill="#0b62a4" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="215.8359375" y="125.97500000000002" width="16.64146205357143" height="187.52499999999998" rx="0" ry="0" fill="#7a92a3" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="244.57170758928572" y="169.25" width="16.64146205357143" height="144.25" rx="0" ry="0" fill="#0b62a4" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="264.21316964285717" y="198.10000000000002" width="16.64146205357143" height="115.39999999999998" rx="0" ry="0" fill="#7a92a3" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="292.9489397321429" y="97.12500000000003" width="16.64146205357143" height="216.37499999999997" rx="0" ry="0" fill="#0b62a4" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="312.59040178571433" y="125.97500000000002" width="16.64146205357143" height="187.52499999999998" rx="0" ry="0" fill="#7a92a3" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="341.32617187500006" y="25" width="16.64146205357143" height="288.5" rx="0" ry="0" fill="#0b62a4" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="360.9676339285715" y="53.85000000000002" width="16.64146205357143" height="259.65" rx="0" ry="0" fill="#7a92a3" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect></svg><div class="morris-hover morris-default-style" style="left: 80.4989px; top: 135px;"><div class="morris-hover-row-label">2007</div>
+							<div class="morris-hover-point" style="color: #0b62a4">
+  Series A:
+  75
+</div><div class="morris-hover-point" style="color: #7a92a3">
+  Series B:
+  65
+</div></div></div>
+							
+							
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+						<i class="fa fa-star"></i>
+                            My Rating
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <center><h1>4.7</h1>
+							<h4>from 6 users</h4></center>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+                   <!-- /.col-lg-8 -->
+                 <!-- belinda Place notifications here please-->
+				<div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-bell fa-fw"></i> Notifications Panel
@@ -299,21 +341,7 @@
                                     <span class="pull-right text-muted small"><em>43 minutes ago</em>
                                     </span>
                                 </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-bolt fa-fw"></i> Server Crashed!
-                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-warning fa-fw"></i> Server Not Responding
-                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                    </span>
-                                </a>
+                               
                                 <a href="#" class="list-group-item">
                                     <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
                                     <span class="pull-right text-muted small"><em>9:49 AM</em>
@@ -326,21 +354,19 @@
                                 </a>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                           
                         </div>
                         <!-- /.panel-body -->
                     </div>
-                   
+            </div>
+            <!-- /.row -->
                    
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
            
-                <!-- /.col-lg-8 -->
                 
-            </div>
-            <!-- /.row -->
     </div>
         <!-- /#page-wrapper -->
 

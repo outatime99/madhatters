@@ -16,6 +16,7 @@
 
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<link href="../vendor/nav.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -42,13 +43,15 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
+			
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Experience Discoverer</a>
+				
+                 <img src="../images/images.png" alt="Icon">
             </div>
             <!-- /.navbar-header -->
 
@@ -156,17 +159,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                       
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -183,7 +176,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="flot.html"><i class="fa fa-table fa-fw"></i> Report</a>
+                            <a href="report.html"><i class="fa fa-table fa-fw"></i> Report</a>
                         </li>
                         <li>
                             <a href="admin.html"><i class="fa fa-edit fa-fw"></i> Admin</a>
@@ -198,48 +191,45 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Idea</h1>
+                    <h1 class="page-header">View Idea</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Form Elements
-                        </div>
+               <div class="col-lg-12">
+                    
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form">
+                                    <form role="form" id="form_createNewIdea" name="form_createNewIdea">
                                         <div class="form-group">
                                             <label>Idea</label>
-                                            <input class="form-control">
-                                            <p class="help-block">Example block-level help text here.</p>
+                                            <input id="idea_name" name="idea_name" class="form-control">
+                                            <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 
 										<div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="4" placeholder="Enter text"></textarea>
+                                            <textarea  id="idea_description" name="idea_description" class="form-control" rows="4" placeholder="Enter text"></textarea>
                                         </div>
 <div class="row">
                                 <div class="col-lg-6">
 										 <div class="form-group">
                                             <label>ROI</label>
-                                            <input class="form-control">
+                                            <input id="idea_roi" name="idea_roi" class="form-control">
                                             <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 										 <div class="form-group">
                                             <label>Business Unit</label>
-											<select class="form-control">
+											<select id="idea_bu" name="idea_bu" class="form-control">
                                                 <option>ICIB</option>
                                                 <option>Property</option>
                                                 <option>Investment</option>
                                                 <option>Wealth</option>
                                                 <option>Imports</option>
                                             </select>
-                                            <!--input class="form-control"-->
+											<!--input class="form-control"-->
                                             <!--p class="help-block">Example block-level help text here.</p-->
                                         </div>
 										</div>
@@ -248,7 +238,7 @@
  <label>Due date</label>
 										<div class="input-group date" data-provide="datepicker">
 										
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" id="idea_duedate" name="idea_duedate">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
@@ -257,17 +247,8 @@
 <!--p class="help-block">Example block-level help text here.</p-->
 <br>
                                         <div class="form-group">
-                                            <label>Supporting Document</label>
-                                            <input type="file" >
-											<!--p class="help-block">Example block-level help text here.</p-->
-                                        </div>
-										
-                                       
-</div>
-</div>
- <div class="form-group">
                                             <label>Skills</label>
-                                            <select class="form-control">
+                                            <select class="form-control" id="idea_skills" name="idea_skills">
                                                 <option>C++</option>
                                                 <option>.Net</option>
                                                 <option>Excel</option>
@@ -275,16 +256,25 @@
                                                 <option>XML</option>
                                             </select>
 											</div>
-					
-                                          </div>
-											</div>
-					
+											
+											
+											<!--p class="help-block">Example block-level help text here.</p-->
+                                        </div>
+										
+                                       
+</div>
+ <div class="form-group">
+                                           
+											
+											<label>Supporting Document</label>
+                                            <input type="file" id="idea_file" class="idea_file" >
+					                                </div>
+</div>
+
                                         						 
-                                       
-                                       
+                                        
                                     </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
+<br>
                                
                             </div>
                             <!-- /.row (nested) -->
@@ -333,62 +323,62 @@
                             <ul class="chat" >
                                 <li class="left clearfix">
                                     <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                        <img src="../images/Belinda.JPG" alt="User Avatar" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
-                                            <strong class="primary-font">Jack Sparrow</strong>
+                                            <strong class="primary-font">Belinda Boshomane</strong>
                                             <small class="pull-right text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
                                             </small>
                                         </div>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                                        </p>
+										This is an Awesome idea I am going for it.
+                                          </p>
                                     </div>
                                 </li>
                                 <li class="right clearfix">
                                     <span class="chat-img pull-right">
-                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                                        <img src="../images/Greg.JPG" alt="User Avatar" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
                                             <small class=" text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
-                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                            <strong class="pull-right primary-font">Greg Fullard</strong>
                                         </div>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                                        </p>
+										Well, the ROI is really high so if this works i would really be  happy
+                                            </p>
                                     </div>
                                 </li>
                                 <li class="left clearfix">
                                     <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                        <img src="../images/Lior.JPG" alt="User Avatar" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
-                                            <strong class="primary-font">Jack Sparrow</strong>
+                                            <strong class="primary-font">Lior Schwartz</strong>
                                             <small class="pull-right text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
                                         </div>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                                        </p>
+										I dont like this idea at all
+                                            </p>
                                     </div>
                                 </li>
                                 <li class="right clearfix">
                                     <span class="chat-img pull-right">
-                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                                        <img src="../images/Kotse.JPG" alt="User Avatar" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
                                             <small class=" text-muted">
                                                 <i class="fa fa-clock-o fa-fw"></i> 15 mins ago</small>
-                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                            <strong class="pull-right primary-font">Kotse</strong>
                                         </div>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+										I think its cool
                                         </p>
                                     </div>
                                 </li>
@@ -428,38 +418,52 @@
                                             <th>Due Date</th>
 											<th>Value</th>
                                             <th>%</th>
+											<th>Rate</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td> <label class="checkbox-inline">
+                                            <td> 
                                                 <input type="checkbox">
-                                            </label></td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-											<td>Otto</td>
-                                            <td>@mdo</td>
+                                           </td>
+                                            <td>Belinda</td>
+                                            <td>Identify all reports</td>
+                                            <td>01/01/17</td>
+											<td>R1 500 000</td>
+                                            <td>20%</td>
+											<td>
+											<button type="button" class="btn btn-danger btn-circle"><i class="fa fa-star"></i>
+											</button>
+											</td>
+											
                                         </tr>
                                         <tr>
-                                            <td> <label class="checkbox-inline">
+                                            <td> 
                                                 <input type="checkbox">
-                                            </label></td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-											<td>Thornton</td>
-                                            <td>@fat</td>
+                                           </td>
+                                            <td>Lior</td>
+                                            <td>Build services</td>
+                                            <td>02/02/17</td>
+											<td>R1 500 000</td>
+                                            <td>30%</td>
+											<td>
+											<button type="button" class="btn btn-danger btn-circle"><i class="fa fa-star"></i>
+											</button>
+											</td>
                                         </tr>
                                         <tr>
-                                            <td> <label class="checkbox-inline">
+                                            <td>
                                                 <input type="checkbox">
-                                            </label></td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-											 <td>the Bird</td>
-                                            <td>@twitter</td>
+                                          </td>
+                                            <td>Greg</td>
+                                            <td>Sell all Printers</td>
+                                            <td>01/12/16</td>
+											 <td>R2 000 000</td>
+                                            <td>5%</td>
+											<td>
+											<button type="button" class="btn btn-danger btn-circle"><i class="fa fa-star"></i>
+											</button>
+											</td>
                                         </tr>
                                     </tbody>
                                 </table>
